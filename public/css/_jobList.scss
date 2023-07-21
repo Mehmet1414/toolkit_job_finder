@@ -1,0 +1,36 @@
+.container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  b {
+    padding: 10px 0;
+
+    span {
+      background-color: #ffaf02;
+      padding: 8px;
+      border-radius: 50%;
+    }
+  }
+  table {
+  
+   
+    margin-top: 10px;
+    tr {
+      background-color: #ffffff33;
+
+      th {
+        padding: 10px 15px;
+        background: #ffaf02;
+        color: #444;
+      }
+      td {
+        padding: 10px 15px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      }
+    }
+    .cift{
+      background: #ffaf0246;
+    }
+  }
+}
