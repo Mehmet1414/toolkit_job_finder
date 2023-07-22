@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AddJob from "./components/addJob";
 import JobList from "./pages/jobListPage";
 import "../public/css/App.scss";
 import Header from "./components/header";
+import AddJob from "./pages/addJob";
 
 function App() {
   return (

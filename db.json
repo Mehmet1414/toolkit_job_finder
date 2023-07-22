@@ -1,4 +1,5 @@
-{"jops": [
+{
+  "jops": [
     {
       "id": 1,
       "position": "Frontend Developer",
@@ -88,7 +89,78 @@
       "status": "Part-Time",
       "work_type": "Hybrid",
       "date": "2023-08-28"
+    },
+    {
+      "company": "udemig",
+      "position": "frotend developer",
+      "location": "paris",
+      "status": "full-time",
+      "work_type": "remote",
+      "date": "2023-08-01",
+      "id": 11
+    },
+    {
+      "company": "netflix",
+      "position": "web developer",
+      "location": "vienna",
+      "status": "full-time",
+      "work_type": "hybrid",
+      "date": "2023-08-06",
+      "id": 12
+    },
+    {
+      "company": "wien enegy",
+      "position": "web developer",
+      "location": "vienna",
+      "status": "full-time",
+      "work_type": "on-site",
+      "date": "2023-08-12",
+      "id": 13
+    },
+    {
+      "company": "statt Wien",
+      "position": "frotend developer",
+      "location": "vienna",
+      "status": "part-time",
+      "work_type": "hybrid",
+      "date": "2023-08-06",
+      "id": 14
+    },
+    {
+      "company": "denem1",
+      "position": "react developer",
+      "location": "vienna",
+      "status": "full-time",
+      "work_type": "hybrid",
+      "date": "2023-08-13",
+      "id": 15
+    },
+    {
+      "company": "denem1",
+      "position": "react developer",
+      "location": "vienna",
+      "status": "full-time",
+      "work_type": "hybrid",
+      "date": "2023-08-13",
+      "id": 16
+    },
+    {
+      "company": "denem1",
+      "position": "react developer",
+      "location": "vienna",
+      "status": "full-time",
+      "work_type": "hybrid",
+      "date": "2023-08-13",
+      "id": 17
+    },
+    {
+      "company": "udemig",
+      "position": "react developer",
+      "location": "paris",
+      "status": "full-time",
+      "work_type": "remote",
+      "date": "2023-09-10",
+      "id": 18
     }
   ]
-  }
-  
+}

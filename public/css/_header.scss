@@ -6,6 +6,12 @@ header{
     align-items: center;
     padding:20px 10px;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(3px);
+    
     a{
         text-decoration: none;
         color: #222;
@@ -36,10 +42,11 @@ header{
             font-weight: 600;
             span{
                 background: #00FF40;
-                padding: 2px 7px;
+                padding: 1px 5px;
                 border-radius: 50%;
                 color: #444;
                 font-weight: 600;
+                text-align: center;
             }
          }
     }
