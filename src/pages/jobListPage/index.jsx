@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { setJob, deleteJob } from "../../redux/jobSlice";
 
 
 
 const JobList = () => {
+  const navigate = useNavigate()
   const dispatch = useDispatch();
   
   const jobState = useSelector((store) => store.jobState.jobs);
@@ -27,7 +28,9 @@ const JobList = () => {
     await axios.delete(`http://localhost:3060/jops/${id}`);
     dispatch(deleteJob(id));
   };
-  
+  const handleClick = (id)=>{
+    navigate(`/add-job/${id}`)
+  }  
 
   return (
     <>
@@ -49,7 +52,8 @@ const JobList = () => {
           {jobState.map((item, index) => (
             <tr key={index} className={number.includes(index) ? "tek" : "cift"}>
               <td className="index">
-                <button className="btn-edit">
+                
+                <button className="btn-edit" onClick={()=> handleClick(item.id)} >
                   <i className="fa-solid fa-square-pen"></i>
                 </button>
                 <button className="btn-delete" onClick={()=> handleDelete(item.id)}>

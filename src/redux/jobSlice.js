@@ -12,10 +12,11 @@ const JobSlice = createSlice({
       console.log("jobState",state.jobs)
     },
     deleteJob:(state,action)=>{
-      state.jobs.splice(action.id,1)
+      state.jobs.splice(action.payload,1)
       console.log("item.id>>>",action)
       
-    }
+    },
+    
   },
 });
 

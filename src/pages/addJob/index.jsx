@@ -1,25 +1,43 @@
 import axios from "axios";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import "../../../public/css/_addJob.scss";
 
 const AddJob = () => {
-  
+  const navigate = useNavigate()
+  const params = useParams()
+  const[updateJobData,setUpdateJobData]= useState({})
+
+  useEffect(()=>{
+    (async()=>{
+      if (params.id) {
+        const responseData = await axios.get(`http://localhost:3060/jops/${params.id}`)
+        console.log("responseData>>",responseData)
+        setUpdateJobData(responseData.data)
+        return
+      }
+    })
+    ()
+  },[params.id])
   return (
     <>
       <div className="container">
         <h1>Yeni Is Girisi</h1>
         <form
           onSubmit={async (e) => {
-              const formData = new FormData(e.currentTarget);
-              const formJson = Object.fromEntries(formData.entries());
-              
-              console.log("formJson >>>", formJson);
-              const formResponse = await axios.post(
-                  "http://localhost:3060/jops",
-                  formJson
-                  );
-            //console.log("formResponse",formResponse)
-            
             e.preventDefault();
+            const formData = new FormData(e.currentTarget);
+            const formJson = Object.fromEntries(formData.entries());
+            if (params) {
+              await axios.put(`http://localhost:3060/jops/${params.id}`,formJson)
+            } else {
+              
+              //console.log("formJson >>>", formJson);
+              await axios.post("http://localhost:3060/jops", formJson);
+            }
+
+            navigate("/")
+
           }}
         >
           <div>
