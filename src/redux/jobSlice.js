@@ -9,11 +9,16 @@ const JobSlice = createSlice({
   reducers: {
     setJob: (state, action) => {
       state.jobs = action.payload;
-      console.log(state.jobs)
+      console.log("jobState",state.jobs)
     },
+    deleteJob:(state,action)=>{
+      state.jobs.splice(action.id,1)
+      console.log("item.id>>>",action)
+      
+    }
   },
 });
 
-export const { setJob } = JobSlice.actions;
+export const { setJob,deleteJob } = JobSlice.actions;
 
 export default JobSlice.reducer;

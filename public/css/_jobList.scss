@@ -17,11 +17,40 @@
     margin-top: 10px;
     tr {
       background-color: #ffffff33;
+      .index{
+
+        .btn-edit{
+          font-size: 20px;
+          margin-right: 4px;
+          border: 
+          none;
+          background: none;
+          color: rgb(0, 147, 0);
+          cursor: pointer;
+          &:hover{
+            transform: scale(1.2);
+
+          }
+        }
+        .btn-delete{
+          font-size: 18px;
+          border: 
+          none;
+          background: none;
+          color: rgb(225, 3, 3);
+          cursor: pointer;
+          &:hover{
+            transform: scale(1.2);
+
+          }
+        }
+      }
 
       th {
         padding: 10px 15px;
         background: #ffaf02;
         color: #444;
+
       }
       td {
         padding: 10px 15px;
