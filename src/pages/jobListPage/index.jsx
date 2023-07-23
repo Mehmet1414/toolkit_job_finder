@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { setJob, deleteJob } from "../../redux/jobSlice";
+import { setJob, deleteJob, updateJob } from "../../redux/jobSlice";
 
 
 
@@ -24,13 +24,20 @@ const JobList = () => {
     })();
   }, []);
   
-  const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3060/jops/${id}`);
-    dispatch(deleteJob(id));
+  const handleDelete = async (item) => {
+    await axios.delete(`http://localhost:3060/jops/${item.id}`);
+    dispatch(deleteJob(item));
   };
-  const handleClick = (id)=>{
-    navigate(`/add-job/${id}`)
-  }  
+  /* const handleClick = async(item)=>{
+    await axios.put(`http://localhost:3060/jops/${item.id}`)
+    dispatch(updateJob(item))
+    navigate(`/add-job`)
+    //console.log("tiklanan Id:", item.id)
+  }  */ 
+  const handleClick = (item)=>{
+    dispatch(updateJob(item))
+    navigate(`/add-job`)
+  }
 
   return (
     <>
@@ -53,10 +60,10 @@ const JobList = () => {
             <tr key={index} className={number.includes(index) ? "tek" : "cift"}>
               <td className="index">
                 
-                <button className="btn-edit" onClick={()=> handleClick(item.id)} >
+                <button className="btn-edit" onClick={()=> handleClick(item)} >
                   <i className="fa-solid fa-square-pen"></i>
                 </button>
-                <button className="btn-delete" onClick={()=> handleDelete(item.id)}>
+                <button className="btn-delete" onClick={()=> handleDelete(item)}>
                   <i className="fa-solid fa-trash-can"></i>
                 </button>
               </td>

@@ -1,43 +1,35 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import "../../../public/css/_addJob.scss";
 
 const AddJob = () => {
-  const navigate = useNavigate()
-  const params = useParams()
-  const[updateJobData,setUpdateJobData]= useState({})
+  const navigate = useNavigate();
+  //console.log(params.id)
+  const state = useSelector((state) => state.jobState.editJob);
+  //console.log("editState",state)
 
-  useEffect(()=>{
-    (async()=>{
-      if (params.id) {
-        const responseData = await axios.get(`http://localhost:3060/jops/${params.id}`)
-        console.log("responseData>>",responseData)
-        setUpdateJobData(responseData.data)
-        return
-      }
-    })
-    ()
-  },[params.id])
+  
+
   return (
     <>
       <div className="container">
-        <h1>Yeni Is Girisi</h1>
+        <h1> {state.id ? "Verileri Güncelle" : "Yeni Is Girisi"}</h1>
         <form
           onSubmit={async (e) => {
             e.preventDefault();
             const formData = new FormData(e.currentTarget);
             const formJson = Object.fromEntries(formData.entries());
-            if (params) {
-              await axios.put(`http://localhost:3060/jops/${params.id}`,formJson)
+            if (state.id) {
+              await axios.post(`http://localhost:3060/jops/${state.id}`, formJson);
+              
             } else {
               
               //console.log("formJson >>>", formJson);
               await axios.post("http://localhost:3060/jops", formJson);
             }
-
-            navigate("/")
-
+            
+            navigate("/");
           }}
         >
           <div>
@@ -48,6 +40,7 @@ const AddJob = () => {
               type="text"
               id="company"
               required
+              value={state ? state.company : ""}
             />
           </div>
           <div>
@@ -58,6 +51,7 @@ const AddJob = () => {
               type="text"
               id="position"
               required
+              value={state ? state.position : ""}
             />
           </div>
           <div>
@@ -68,6 +62,7 @@ const AddJob = () => {
               type="text"
               id="location"
               required
+              value={state ? state.location : ""}
             />
           </div>
           <div>
@@ -90,10 +85,16 @@ const AddJob = () => {
             </div>
             <div>
               <label htmlFor="date">Tarih</label>
-              <input type="date" id="date" name="date" required />
+              <input
+                type="date"
+                id="date"
+                name="date"
+                required
+                value={state ? state.date : ""}
+              />
             </div>
             <div>
-              <button>Kaydet</button>
+              <button>{state.id ? "güncelle" : "kaydet"}</button>
             </div>
           </div>
         </form>
