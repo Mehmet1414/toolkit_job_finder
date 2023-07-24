@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import FilterJob from "../../components/filterJob";
 import { setJob, deleteJob, updateJob } from "../../redux/jobSlice";
 
 
@@ -36,6 +37,7 @@ const JobList = () => {
 
   return (
     <>
+    <FilterJob />
       <div className="container">
         <h1>
           Tüm Islerin Listesi
