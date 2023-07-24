@@ -1,3 +1,65 @@
+@import "./mobile";
+
+header{
+    
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:20px 40px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(3px);
+    
+    a{
+        text-decoration: none;
+        color: #222;
+    }
+
+    h1{
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 25px;
+        position: relative;
+        span{
+            padding: 5px 15px;
+            background: #ffaf02;
+            border-radius: 50%;
+            position: absolute;
+            z-index: -1;
+            top: -5px;
+            left: 33px;
+
+        }
+        
+    }
+    div{
+         a{
+            text-decoration: none;
+            padding-left: 20px;
+            color: #444;
+            font-weight: 600;
+            span{
+                background: #00FF40;
+                padding: 1px 5px;
+                border-radius: 50%;
+                color: #444;
+                font-weight: 600;
+                text-align: center;
+            }
+         }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    // Tablet cihazlar için stil tanımlamaları burada...
+
+
 header{
     
     margin-top: 20px;
@@ -18,6 +80,7 @@ header{
     }
 
     h1{
+
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -33,13 +96,13 @@ header{
             left: 33px;
 
         }
+        
     }
     div{
          a{
             text-decoration: none;
-            padding-left: 20px;
+            padding-left: 5px;
             color: #444;
-            font-weight: 600;
             span{
                 background: #00FF40;
                 padding: 1px 5px;
@@ -51,3 +114,5 @@ header{
          }
     }
 }
+
+  }

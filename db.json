@@ -10,6 +10,33 @@
       "id": 14
     },
     {
+      "company": "udemigggggg",
+      "position": "frotend developerrrrrrr",
+      "location": "parisssssss",
+      "status": "Seciniz",
+      "work_type": "Seciniz",
+      "date": "2023-08-03",
+      "id": 18
+    },
+    {
+      "company": "netflixxxxx",
+      "position": "react developer",
+      "location": "vienna",
+      "status": "Seciniz",
+      "work_type": "Seciniz",
+      "date": "2023-08-31",
+      "id": 17
+    },
+    {
+      "company": "udemigggggg",
+      "position": "frotend developerrrrrrr",
+      "location": "parisssssss",
+      "status": "Seciniz",
+      "work_type": "Seciniz",
+      "date": "2023-08-03",
+      "id": 18
+    },
+    {
       "company": "netflixxxxx",
       "position": "react developer",
       "location": "vienna",
@@ -37,6 +64,87 @@
       "id": 20
     },
     {
+      "company": "google",
+      "position": "web developer",
+      "location": "vienna",
+      "status": "part-time",
+      "work_type": "on-site",
+      "date": "2023-08-04",
+      "id": 14
+    },
+    {
+      "company": "google",
+      "position": "web developer",
+      "location": "vienna",
+      "status": "part-time",
+      "work_type": "on-site",
+      "date": "2023-08-04",
+      "id": 14
+    },
+    {
+      "company": "google",
+      "position": "web developer",
+      "location": "vienna",
+      "status": "part-time",
+      "work_type": "on-site",
+      "date": "2023-08-04",
+      "id": 14
+    },
+    {
+      "company": "netflix",
+      "position": "react developer",
+      "location": "vienna",
+      "status": "Seciniz",
+      "work_type": "Seciniz",
+      "date": "2023-08-31",
+      "id": 17
+    },
+    {
+      "company": "udemig",
+      "position": "frotend developer",
+      "location": "paris",
+      "status": "Seciniz",
+      "work_type": "Seciniz",
+      "date": "2023-08-03",
+      "id": 18
+    },
+    {
+      "company": "netflix",
+      "position": "react developer",
+      "location": "vienna",
+      "status": "Seciniz",
+      "work_type": "Seciniz",
+      "date": "2023-08-31",
+      "id": 17
+    },
+    {
+      "company": "udemig",
+      "position": "frotend developer",
+      "location": "paris",
+      "status": "Seciniz",
+      "work_type": "Seciniz",
+      "date": "2023-08-03",
+      "id": 18
+    },
+    {
+      "company": "netflix",
+      "position": "react developer",
+      "location": "vienna",
+      "status": "Seciniz",
+      "work_type": "Seciniz",
+      "date": "2023-08-31",
+      "id": 17
+    },
+    {
+      "company": "udemig",
+      "position": "frotend developer",
+      "location": "paris",
+      "status": "Seciniz",
+      "work_type": "Seciniz",
+      "date": "2023-08-03",
+      "id": 18
+    },
+    {
       "company": "wien enegyyyy",
       "position": "frotend developerrrrrrr",
       "location": "paris",
@@ -44,6 +152,24 @@
       "work_type": "Seciniz",
       "date": "2023-09-01",
       "id": 22
+    },
+    {
+      "company": "netflix",
+      "position": "frotend developer",
+      "location": "vienna",
+      "status": "part-time",
+      "work_type": "on-site",
+      "date": "2023-07-25",
+      "id": 23
+    },
+    {
+      "company": "netflixxxxx",
+      "position": "web developer",
+      "location": "viennaaaa",
+      "status": "part-time",
+      "work_type": "on-site",
+      "date": "2023-08-04",
+      "id": 24
     }
   ]
 }

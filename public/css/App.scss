@@ -1,6 +1,8 @@
 @import "./jobList";
 @import "./addJob";
 @import "./header";
+@import "./mobile";
+@import "./tablet";
 
 * {
   padding: 0;
@@ -8,17 +10,19 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
-body {
+html {
   background: linear-gradient(
     135deg,
     rgba(34, 193, 195, 1) 1%,
     rgba(253, 187, 45, 0.898) 99%
-  ) no-repeat center  ;
-  background-size: cover;
-  height: 100vh;
-  width: 100%;
- 
+  );
+background-position: center; 
+background-size: cover;
+background-repeat: no-repeat;
+
+
 }
 .App{
-  padding: 0 100px;
+  padding: 0 10%;
+  
 }

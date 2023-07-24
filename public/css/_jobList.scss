@@ -1,56 +1,77 @@
+@import "./mobile";
+
 .container {
-  margin-top: 50px;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  width: 100%;
+
   b {
     padding: 10px 0;
 
     span {
       background-color: #ffaf02;
+      border: 2px solid #ffffff67;
       padding: 8px;
       border-radius: 50%;
     }
   }
   table {
-  
-   
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 10px;
+    overflow: scroll;
+    tbody {
+      height: 100%;
+    }
     tr {
       background-color: #ffffff33;
-      .index{
+      .index {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        span{
+          font-weight: bold;
+          color: #444444db;
+        }
+        div{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 5px;
 
-        .btn-edit{
-          font-size: 20px;
-          margin-right: 4px;
-          border: 
-          none;
-          background: none;
-          color: rgb(0, 147, 0);
-          cursor: pointer;
-          &:hover{
-            transform: scale(1.2);
-
+          .btn-edit {
+            font-size: 20px;
+            margin-right: 4px;
+            border: none;
+            background: none;
+            color: rgb(0, 147, 0);
+            cursor: pointer;
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+          .btn-delete {
+            font-size: 18px;
+            border: none;
+            background: none;
+            color: rgb(225, 3, 3);
+            cursor: pointer;
+            &:hover {
+              transform: scale(1.2);
+            }
           }
         }
-        .btn-delete{
-          font-size: 18px;
-          border: 
-          none;
-          background: none;
-          color: rgb(225, 3, 3);
-          cursor: pointer;
-          &:hover{
-            transform: scale(1.2);
 
-          }
-        }
       }
 
       th {
         padding: 10px 15px;
         background: #ffaf02;
         color: #444;
-
+        padding: 15px 15px;
       }
       td {
         padding: 10px 15px;
@@ -58,7 +79,7 @@
           rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
       }
     }
-    .cift{
+    .cift {
       background: #ffaf0246;
     }
   }

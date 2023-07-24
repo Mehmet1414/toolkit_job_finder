@@ -37,14 +37,16 @@ const JobList = () => {
   return (
     <>
       <div className="container">
-        <b>
-          <span>{jobState.length}</span> <u>is Bulundu</u>{" "}
-        </b>
+        <h1>
+          Tüm Islerin Listesi
+        </h1>
         <table>
           <tbody>
 
           <tr>
-            <th>index</th>
+            <th><b>
+          <u>Toplam:</u> <span>{jobState.length}</span> 
+        </b></th>
             <th>Firma</th>
             <th>Pozisyon</th>
             <th>Lokasyon</th>
@@ -56,13 +58,15 @@ const JobList = () => {
           {jobState.map((item, index) => (
             <tr key={index} className={number.includes(index) ? "tek" : "cift"}>
               <td className="index">
-                
+                <span>{index +1}.</span>
+                <div>
                 <button className="btn-edit" onClick={()=> handleClick(item)} >
                   <i className="fa-solid fa-square-pen"></i>
                 </button>
                 <button className="btn-delete" onClick={()=> handleDelete(item)}>
                   <i className="fa-solid fa-trash-can"></i>
                 </button>
+                </div>
               </td>
               <td>
                 <Link to={""}>{item.company}</Link>

@@ -1,0 +1,26 @@
+@media screen and (max-width: 767px) {
+  .container {
+    overflow: auto;
+    table {
+        width: 100%;
+
+        tbody {
+          height: 100%;
+          overflow-x: auto;
+          
+       
+      }
+    }
+  }
+  header{
+    div{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        
+
+    }
+
+  }
+  // Mobil cihazlar için stil tanımlamaları burada...
+}

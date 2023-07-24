@@ -10,7 +10,7 @@ const Header = () => {
         <div>
         <Link to={"/"}>Listele</Link>
         <Link to={"add-job"} onClick ={()=>{
-          
+          window.Location()
         }}>Yeni Ekle <span>+</span> </Link>
         </div>
       </header>
