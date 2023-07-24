@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   jobs: [],
-  editJob: [],
+  editJob: {},
 };
 const JobSlice = createSlice({
   name: "JobSLice",
@@ -10,25 +10,29 @@ const JobSlice = createSlice({
   reducers: {
     setJob: (state, action) => {
       state.jobs = action.payload;
-      console.log("jobState", state.jobs);
+      //console.log("jobState", state.jobs);
     },
     deleteJob: (state, action) => {
-      const index = state.jobs.findIndex((job)=> job.id === action.payload.id )
+      const index = state.jobs.findIndex((job) => job.id === action.payload.id);
       state.jobs.splice(index, 1);
       //console.log("delete.job>>>", action);
     },
     updateJob: (state, action) => {
-      const { id, editJob } = action.payload;
       state.editJob = action.payload;
+
+      //console.log("editData >>", action.payload);
+    },
+    editedJob: (state, action) => {
+      const { id, editedJob } = action.payload;
       const index = state.jobs.findIndex((job) => job.id === id);
       if (index !== -3) {
-        state.jobs[index] = editJob;
+        state.jobs[index] = editedJob;
+        //console.log("editedJob>>>>",action.payload)
       }
-      console.log("editData >>", action.payload);
     },
   },
 });
 
-export const { setJob, deleteJob, updateJob } = JobSlice.actions;
+export const { setJob, deleteJob, updateJob,editedJob } = JobSlice.actions;
 
 export default JobSlice.reducer;

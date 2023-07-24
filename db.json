@@ -1,22 +1,49 @@
 {
   "jops": [
     {
-      "id": 10,
-      "position": "Content Writer",
-      "company": "HIJ Content Creations",
-      "location": "Sydney",
-      "status": "Part-Time",
-      "work_type": "Hybrid",
-      "date": "2023-07-21"
+      "company": "google",
+      "position": "web developer",
+      "location": "vienna",
+      "status": "Seciniz",
+      "work_type": "Seciniz",
+      "date": "2023-08-04",
+      "id": 14
     },
     {
-      "company": "netflix",
+      "company": "netflixxxxx",
       "position": "react developer",
+      "location": "vienna",
+      "status": "Seciniz",
+      "work_type": "Seciniz",
+      "date": "2023-08-31",
+      "id": 17
+    },
+    {
+      "company": "udemigggggg",
+      "position": "frotend developerrrrrrr",
+      "location": "parisssssss",
+      "status": "Seciniz",
+      "work_type": "Seciniz",
+      "date": "2023-08-03",
+      "id": 18
+    },
+    {
+      "company": "udemig",
+      "position": "reacttttt developer",
+      "location": "viennaaaa",
+      "status": "full-time",
+      "work_type": "hybrid",
+      "date": "2023-09-07",
+      "id": 20
+    },
+    {
+      "company": "wien enegyyyy",
+      "position": "frotend developerrrrrrr",
       "location": "paris",
-      "status": "part-time",
-      "work_type": "remote",
-      "date": "2023-08-17",
-      "id": 23
+      "status": "Seciniz",
+      "work_type": "Seciniz",
+      "date": "2023-09-01",
+      "id": 22
     }
   ]
 }

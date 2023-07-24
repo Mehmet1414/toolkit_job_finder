@@ -1,15 +1,29 @@
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "../../../public/css/_addJob.scss";
+import { editedJob } from "../../redux/jobSlice";
 
 const AddJob = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  //console.log(params.id)
   const state = useSelector((state) => state.jobState.editJob);
-  //console.log("editState",state)
-
-  
+  //console.log("editState",state.id)
+  const [stateForm, setStateForm] = useState(null);
+  useEffect(() => {
+    const stateValue = state
+      ? state
+      : {
+          company: "",
+          position: "",
+          location: "",
+          status: "",
+          work_type: "",
+          date: "",
+        };
+    setStateForm(stateValue);
+  }, []);
 
   return (
     <>
@@ -21,14 +35,17 @@ const AddJob = () => {
             const formData = new FormData(e.currentTarget);
             const formJson = Object.fromEntries(formData.entries());
             if (state.id) {
-              await axios.post(`http://localhost:3060/jops/${state.id}`, formJson);
-              
+              await axios.put(
+                `http://localhost:3060/jops/${state.id}`,
+                formJson
+              );
+              dispatch(editedJob({ id: state.id, editedJob: stateForm }));
+              navigate("/");
             } else {
-              
-              //console.log("formJson >>>", formJson);
               await axios.post("http://localhost:3060/jops", formJson);
+              console.log("formJson >>>", formJson);
             }
-            
+
             navigate("/");
           }}
         >
@@ -40,7 +57,10 @@ const AddJob = () => {
               type="text"
               id="company"
               required
-              value={state ? state.company : ""}
+              value={stateForm?.company}
+              onChange={(e) =>
+                setStateForm({ ...stateForm, company: e.target.value })
+              }
             />
           </div>
           <div>
@@ -51,7 +71,10 @@ const AddJob = () => {
               type="text"
               id="position"
               required
-              value={state ? state.position : ""}
+              value={stateForm?.position}
+              onChange={(e) => {
+                setStateForm({ ...stateForm, position: e.target.value });
+              }}
             />
           </div>
           <div>
@@ -62,7 +85,10 @@ const AddJob = () => {
               type="text"
               id="location"
               required
-              value={state ? state.location : ""}
+              value={stateForm?.location}
+              onChange={(e) => {
+                setStateForm({ ...stateForm, location: e.target.value });
+              }}
             />
           </div>
           <div>
@@ -90,7 +116,10 @@ const AddJob = () => {
                 id="date"
                 name="date"
                 required
-                value={state ? state.date : ""}
+                value={stateForm?.date}
+                onChange={(e) => {
+                  setStateForm({ ...stateForm, date: e.target.value });
+                }}
               />
             </div>
             <div>

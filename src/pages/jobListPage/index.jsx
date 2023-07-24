@@ -28,12 +28,7 @@ const JobList = () => {
     await axios.delete(`http://localhost:3060/jops/${item.id}`);
     dispatch(deleteJob(item));
   };
-  /* const handleClick = async(item)=>{
-    await axios.put(`http://localhost:3060/jops/${item.id}`)
-    dispatch(updateJob(item))
-    navigate(`/add-job`)
-    //console.log("tiklanan Id:", item.id)
-  }  */ 
+ 
   const handleClick = (item)=>{
     dispatch(updateJob(item))
     navigate(`/add-job`)
@@ -46,6 +41,8 @@ const JobList = () => {
           <span>{jobState.length}</span> <u>is Bulundu</u>{" "}
         </b>
         <table>
+          <tbody>
+
           <tr>
             <th>index</th>
             <th>Firma</th>
@@ -77,6 +74,8 @@ const JobList = () => {
               <td>{item.date}</td>
             </tr>
           ))}
+          </tbody>
+
         </table>
       </div>
     </>
