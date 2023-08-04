@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   h1 {
+    color: #444;
     margin: 20px;
     border-bottom: 4px solid #ffaf02bd;
   }
@@ -16,23 +17,28 @@
     gap: 10px;
     max-width: 800px;
     padding: 40px 20px;
+    label{
+      text-transform: capitalize;
+    }
 
     .input_group {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       align-items: center;
-      gap: 5px;
+      gap: 10px;
 
       div {
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: start;
         flex-wrap: wrap;
+
 
         label {
           flex: 1;
-          padding: 10px;
+          padding: 10px 0;
         }
         input {
           flex: 1;
@@ -50,16 +56,26 @@
     .select_group {
       display: flex;
       justify-content: space-between;
-      align-items: center;
       flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      :nth-child(4){
+        width: 100%;
+      }
+      
+      
+
       div {
+
         margin-top: 20px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: start;
         gap: 4px;
         label {
           flex: 1;
+          padding: 10px 0;
         }
         select {
           flex: 1;
@@ -67,16 +83,18 @@
           padding: 10px;
         }
         button {
+
+          width: 100%;
           padding: 10px 20px;
-          background: #ffaf02;
+          background: transparent;
           text-transform: uppercase;
           font-weight: 600;
-          border: none;
+          border: 2px solid #ffaf02;
           cursor: pointer;
-          transition: all 0.3s ease;
+          transition: all 0.5s ease;
           &:hover {
-            background: #222;
-            transition: all 0.3s ease;
+            background: #444;
+            transition: all 0.5s ease;
             color: #ffaf02;
           }
         }

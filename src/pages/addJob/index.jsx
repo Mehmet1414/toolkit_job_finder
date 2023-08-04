@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "../../../public/css/_addJob.scss";
+import { statusOptions, workTypeOptions } from "../../Constans";
 import { editedJob } from "../../redux/jobSlice";
 
 const AddJob = () => {
@@ -28,7 +29,7 @@ const AddJob = () => {
   return (
     <>
       <div className="container">
-        <h1> {state.id ? "Verileri Güncelle" : "Yeni Is Girisi"}</h1>
+        <h1> {state.id ? "Verileri Güncelle" : "Yeni Is Ekle"}</h1>
         <form
           onSubmit={async (e) => {
             e.preventDefault();
@@ -49,67 +50,74 @@ const AddJob = () => {
             navigate("/");
           }}
         >
-          <div>
-            <label htmlFor="company">Firma</label>
-            <input
-              name="company"
-              placeholder="Firma Adini Giriniz.."
-              type="text"
-              id="company"
-              required
-              value={stateForm?.company}
-              onChange={(e) =>
-                setStateForm({ ...stateForm, company: e.target.value })
-              }
-            />
+          <div className="div_1">
+            <div className="input">
+              <label htmlFor="company">Firma</label>
+              <input
+                name="company"
+                placeholder="Firma Adini Giriniz.."
+                type="text"
+                id="company"
+                required
+                value={stateForm?.company}
+                onChange={(e) =>
+                  setStateForm({ ...stateForm, company: e.target.value })
+                }
+              />
+            </div>
+            <div className="input">
+              <label htmlFor="position">Pozisyon</label>
+              <input
+                name="position"
+                placeholder="Ihtiyac Pozisyonunu Giriniz..."
+                type="text"
+                id="position"
+                required
+                value={stateForm?.position}
+                onChange={(e) => {
+                  setStateForm({ ...stateForm, position: e.target.value });
+                }}
+              />
+            </div>
+            <div className="input">
+              <label htmlFor="location">Lokasyon</label>
+              <input
+                name="location"
+                placeholder="Firma Lokasyonunu Giriniz..."
+                type="text"
+                id="location"
+                required
+                value={stateForm?.location}
+                onChange={(e) => {
+                  setStateForm({ ...stateForm, location: e.target.value });
+                }}
+              />
+            </div>
           </div>
-          <div>
-            <label htmlFor="position">Pozisyon</label>
-            <input
-              name="position"
-              placeholder="Ihtiyac Pozisyonunu Giriniz..."
-              type="text"
-              id="position"
-              required
-              value={stateForm?.position}
-              onChange={(e) => {
-                setStateForm({ ...stateForm, position: e.target.value });
-              }}
-            />
-          </div>
-          <div>
-            <label htmlFor="location">Lokasyon</label>
-            <input
-              name="location"
-              placeholder="Firma Lokasyonunu Giriniz..."
-              type="text"
-              id="location"
-              required
-              value={stateForm?.location}
-              onChange={(e) => {
-                setStateForm({ ...stateForm, location: e.target.value });
-              }}
-            />
-          </div>
-          <div>
-            <div>
+          <div className="div_2">
+            <div className="select">
               <label htmlFor="status">Zaman Tipi</label>
               <select name="status" id="status" required>
                 <option>Seciniz</option>
-                <option value="full-time">Full-Time</option>
-                <option value="part-time">Part-Time</option>
+                {statusOptions.map((opt, index) => (
+                  <option key={index} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
               </select>
             </div>
-            <div>
+            <div className="select">
               <label htmlFor="work_type">Calisma Sekli</label>
               <select name="work_type" id="work_type" required>
                 <option>Seciniz</option>
-                <option value="on-site">On-Site</option>
-                <option value="hybrid">Hybrid</option>
-                <option value="remote">Remote</option>
+                {workTypeOptions.map((opt, index) => (
+                  <option key={index} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
               </select>
             </div>
-            <div>
+            <div className="select">
               <label htmlFor="date">Tarih</label>
               <input
                 type="date"
@@ -122,10 +130,10 @@ const AddJob = () => {
                 }}
               />
             </div>
-            <div>
+          </div>
+            <div className="btn">
               <button>{state.id ? "güncelle" : "kaydet"}</button>
             </div>
-          </div>
         </form>
       </div>
     </>
