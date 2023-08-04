@@ -69,7 +69,7 @@ const AddJob = () => {
               <label htmlFor="position">Pozisyon</label>
               <input
                 name="position"
-                placeholder="Ihtiyac Pozisyonunu Giriniz..."
+                placeholder="Pozisyonunu Giriniz..."
                 type="text"
                 id="position"
                 required
@@ -83,7 +83,7 @@ const AddJob = () => {
               <label htmlFor="location">Lokasyon</label>
               <input
                 name="location"
-                placeholder="Firma Lokasyonunu Giriniz..."
+                placeholder="Lokasyonunu Giriniz..."
                 type="text"
                 id="location"
                 required
