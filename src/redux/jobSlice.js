@@ -49,7 +49,7 @@ const JobSlice = createSlice({
       state.filteredJobs = filteredWorkType;
     },
     filterBySort: (state, action) => {
-      // !console.log(action.payload)
+      // console.log(action.payload)
       switch ((state, action.payload)) {
         case "a-z":
           state.filteredJobs.sort((a, b) => {
